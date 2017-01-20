@@ -3,7 +3,8 @@
     "description": "Generate nix expressions to fetch composer dependencies",
     "type": "project",
     "require": {
-        "composer/composer": "^1.3"
+        "composer/composer": "^1.3",
+        "symfony/console": "^3.2"
     },
     "license": "MIT",
     "authors": [
