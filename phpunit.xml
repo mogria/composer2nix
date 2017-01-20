@@ -1,0 +1,10 @@
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="Composer2NixCliTests">
+            <directory>tests/Cli</directory>
+        </testsuite>
+        <testsuite name="Composer2NixUnitTests">
+            <directory>tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
