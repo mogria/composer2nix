@@ -45,7 +45,7 @@ class FetchCommand extends Command {
         // TODO: dynamically create constraint out of the target and
         // version arguments, at the moment just pull the lattest stuff
         $matchedPackage = $rootRepository->findPackage(
-            $packageName,
+            $packageNamematchedPackage->getName(),
             new \Composer\Semver\Constraint\EmptyConstraint()
         );
         if($matchedPackage === NULL) {
@@ -57,6 +57,6 @@ class FetchCommand extends Command {
         // FIXME: Maybe find a better scheme to set the path to download too,
         // and take a look at the actual composer sources for this. This might be important for
         // some autoloader stuff.
-        $downloader->download($matchedPackage, getcwd() . "/downloads/" . $package);
+        $downloader->download($matchedPackage, $input->getOption('out') . DIRECTORY_SEPARATOR . $matchedPackage->getName());
     }
 }
